@@ -27,7 +27,7 @@ class Emulator
       iteration = 0
       null_time = Time.now.to_i
       while((Time.now.to_i - null_time) < sec)
-        message(%q{&#8625} + "**********************************************")
+        message("**********************************************")
         message(">>  #{iteration} iteration start")
         # message(Time.now.to_i - null_time)
         
