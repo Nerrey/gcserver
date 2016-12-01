@@ -25,6 +25,7 @@ gem 'redis-store', :require => 'redis-store'
 gem 'redis-rails'
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rails_best_practices'
