@@ -14,6 +14,7 @@ class Emulator
 
   def initialize(user_id, host, api_port, socket_port, target_id)
     @user = User.where(id: user_id).first
+    @user ||= User.create(phone: "1234567890")
     @target = target_id
     @target_user = User.where(id: target_id).first
     @groups = @user.groups
@@ -33,17 +34,17 @@ class Emulator
       while((Time.now.to_i - null_time) < sec)
         message("**********************************************")
         message(">>  #{iteration} iteration start")
-        case rand(4)
-        when 0
-          message("|<- " + wry(@target_user).to_s)
-        when 1
-          message("|<- " + wry_group(@groups.first.id).to_s)
-        when 2
-          message("|<- " + im_here(@target_user).to_s)
-        when 3
-          message("|<- " + im_here_group(@groups.first.id).to_s) 
-        else
-        end
+        # case rand(4)
+        # when 0
+        #   message("|<- " + wry(@target_user).to_s)
+        # when 1
+        #   message("|<- " + wry_group(@groups.first.id).to_s)
+        # when 2
+        #   message("|<- " + im_here(@target_user).to_s)
+        # when 3
+        #   message("|<- " + im_here_group(@groups.first.id).to_s) 
+        # else
+        # end
         if knock("#{@host}", @socket_port, @user.phone)
           message("|<- " + get_my_data(@user.phone).to_s)
         end

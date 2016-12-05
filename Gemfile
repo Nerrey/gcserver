@@ -24,9 +24,16 @@ gem 'redis'
 gem 'redis-store', :require => 'redis-store'
 gem 'redis-rails'
 
-group :development, :test do
-  gem 'rspec-rails'
+
+group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rails_best_practices'
 end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+end
+
