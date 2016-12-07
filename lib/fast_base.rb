@@ -22,10 +22,6 @@ class FastBase
     end
   end
   
-  # def del_by_val(key, value)
-  #   puts "gcserver|#{key}|#{Crypta.crypt(value)}"
-  #   $redis.del("gcserver|#{key}|#{Crypta.crypt(value)}")
-  # end
   def self.get_and_del_by_key(key)
     keys = $redis.keys("gcserver|#{key}|*")
     begin

@@ -20,11 +20,5 @@ class Crypta
     str = Base64.decode64(str)
     str.split("|").first
   end
-
-  private
-
-  def private_method
-  
-  end
   
 end
